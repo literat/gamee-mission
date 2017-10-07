@@ -1,0 +1,9 @@
+FROM php:7.1-fpm
+LABEL maintainer="Tomas Litera, tomas@litera.me"
+
+ENV APP_ENV local
+
+RUN \
+	pecl install redis && \
+    pecl install xdebug && \
+    docker-php-ext-enable redis xdebug

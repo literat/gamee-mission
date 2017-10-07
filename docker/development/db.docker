@@ -1,0 +1,3 @@
+FROM redis
+
+RUN mkdir /var/log/redis

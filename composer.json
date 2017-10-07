@@ -1,0 +1,19 @@
+{
+    "name": "literat/gamee-mission",
+    "description": "Implementation of test case for Gamee App",
+    "type": "project",
+    "authors": [
+        {
+            "name": "literat",
+            "email": "tomas@litera.me"
+        }
+    ],
+    "require": {},
+    "scripts": {
+        "drun": "docker-compose up -d",
+        "drb": "docker-compose up -d --build",
+        "dkill": "docker-compose kill",
+        "drm": "docker-compose rm -f",
+        "dps": "docker-compose ps",
+    }
+}
