@@ -8,12 +8,17 @@
             "email": "tomas@litera.me"
         }
     ],
-    "require": {},
+    "require": {
+        "nette/di": "^2.4"
+    },
     "scripts": {
         "drun": "docker-compose up -d",
         "drb": "docker-compose up -d --build",
         "dkill": "docker-compose kill",
         "drm": "docker-compose rm -f",
-        "dps": "docker-compose ps",
+        "dps": "docker-compose ps"
+    },
+    "autoload": {
+        "classmap": ["app"]
     }
 }
