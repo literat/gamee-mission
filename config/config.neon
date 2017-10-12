@@ -1,2 +1,3 @@
 services:
+	- App\Gamee\Router
 	- App\Gamee\Application

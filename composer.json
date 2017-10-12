@@ -9,7 +9,9 @@
         }
     ],
     "require": {
-        "nette/di": "^2.4"
+        "nette/di": "^2.4",
+        "phroute/phroute": "^2.1",
+        "jsonrpc/jsonrpc": "^1.0"
     },
     "scripts": {
         "drun": "docker-compose up -d",
