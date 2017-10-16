@@ -1,7 +1,3 @@
 <?php
 
-$router->define([
-    ''       => 'app/Http/Controllers/HomeController.php',
-    'scores' => 'app/Http/Controllers/ScoresController.php',
-    'games'  => 'app/Http/Controllers/GamesController.php',
-]);
+$router->map('POST', '/scores', 'App\Http\Controllers\ScoresController#receive');

@@ -1,0 +1,25 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Gamee Mission",
+		"_postman_id": "5a6bdd5d-4910-ac77-b6cd-b8f6e568d703",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/scores",
+			"request": {
+				"url": "http://localhost:8080/scores",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"store\", \"params\": [4, 8, 9], \"id\": 1}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -10,15 +10,17 @@
     ],
     "require": {
         "nette/di": "^2.4",
-        "phroute/phroute": "^2.1",
-        "jsonrpc/jsonrpc": "^1.0"
+        "jsonrpc/jsonrpc": "^1.0",
+        "predis/predis": "^1.1",
+        "altorouter/altorouter": "^1.2"
     },
     "scripts": {
         "drun": "docker-compose up -d",
         "drb": "docker-compose up -d --build",
         "dkill": "docker-compose kill",
         "drm": "docker-compose rm -f",
-        "dps": "docker-compose ps"
+        "dps": "docker-compose ps",
+        "clear": "find temp ! -name '.gitignore' -type f -exec rm -rf {} +"
     },
     "autoload": {
         "classmap": ["app"]

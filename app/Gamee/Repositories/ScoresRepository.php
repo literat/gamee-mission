@@ -2,24 +2,55 @@
 
 namespace App\Gamee\Repositories;
 
+use Predis\Client;
+
 class ScoresRepository
 {
 
-  public $error = null;
+    /**
+     * @var Client
+     */
+    private $connection;
 
-  public function divide($dividend, $divisor, $int = false)
-  {
-
-    if (!$divisor)
+    /**
+     * @param Client $connection
+     */
+    public function __construct(Client $connection)
     {
-      $this->error = 'Cannot divide by zero';
-    }
-    else
-    {
-      $quotient = $dividend / $divisor;
-      return $int ? (int) $quotient : $quotient;
+        $this->setConnection($connection);
     }
 
-  }
+    /**
+     * @param  int $gameId
+     * @param  int $userId
+     * @param  int $score
+     * @return bool
+     */
+    public function store($gameId, $userId, $score)
+    {
+        $storage = $this->getConnection();
+
+        return $storage->zAdd($gameId, $userId, $score);
+    }
+
+    /**
+     * @return Client
+     */
+    public function getConnection(): Client
+    {
+        return $this->connection;
+    }
+
+    /**
+     * @param Client $connection
+     *
+     * @return self
+     */
+    public function setConnection(Client $connection): self
+    {
+        $this->connection = $connection;
+
+        return $this;
+    }
 
 }

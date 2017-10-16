@@ -1,3 +1,10 @@
 services:
-	- App\Gamee\Router
-	- App\Gamee\Application
+    - AltoRouter
+    - App\Gamee\Repositories\ScoresRepository
+    - App\Http\Controllers\ScoresController
+    - App\Gamee\Application
+    - Predis\Client([
+        'scheme': 'tcp',
+        'host': 'db',
+        'port': 6379,
+    ])
