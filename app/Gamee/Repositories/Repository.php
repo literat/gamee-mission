@@ -8,9 +8,19 @@ abstract class Repository
 {
 
     /**
+     * @var string
+     */
+    public $error = '';
+
+    /**
      * @var Client
      */
     protected $connection;
+
+    /**
+     * @var Validator
+     */
+    protected $validator;
 
     /**
      * @param Client $connection
@@ -38,6 +48,19 @@ abstract class Repository
         $this->connection = $connection;
 
         return $this;
+    }
+
+    /**
+     * @param array $errors
+     */
+    protected function setError(array $errors)
+    {
+        foreach ($errors as $error) {
+            if (!empty($error)) {
+                $this->error = json_encode($error);
+                break;
+            }
+        }
     }
 
 }
