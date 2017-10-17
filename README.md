@@ -2,6 +2,28 @@
 
 Implementation of test case for [Gamee App](https://www.gameeapp.com/).
 
+You should create two API endpoits - one for storing a gamescore, second for providing top 10 players in particular game (game ID is specified in request parameters).
+
+Client (JavaScript) creates a xhr request on this api endpoint and uses jsonrpc schema (http://www.jsonrpc.org/specification).
+
+Request payload is carrying game ID (int), user ID (int) and game score (int),
+
+PHP application receives this request, stores gameplay data into the game leaderboard and returns a success response.
+
+It doesn't matter whether the application runs on php fpm, some php server or anything different
+
+Technical requirements:
+* Use nette/di
+* Storing leaderboards into suitable Redis (screw data persistency) structure
+
+Input data validation:
+* It is required of you to validate input data
+* Again, use jsonrpc in validation (and other) error responses
+
+Bonus points:
+* It would be cool for use to just clone a git repo, write `docker-compose up`
+* It would be even more cool for the players to have the same ranking as other people with the same score :P
+
 ## Development
 
 ### Servers
