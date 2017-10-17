@@ -8,14 +8,28 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/scores",
+			"name": "Store Scores",
 			"request": {
 				"url": "http://localhost:8080/scores",
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"store\", \"params\": [4, 8, 9], \"id\": 1}"
+					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"store\", \"params\": [1, 1, 1], \"id\": 1}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Games Scores",
+			"request": {
+				"url": "http://localhost:8080/games",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"fetchRanking\", \"params\": [4], \"id\": 1}"
 				},
 				"description": ""
 			},
