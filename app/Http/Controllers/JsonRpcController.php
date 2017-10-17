@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use JsonRpc\Server;
 use App\Gamee\Repositories\Repository;
+use App\Gamee\ServerTransport;
 
 abstract class JsonRpcController
 {
@@ -23,7 +24,8 @@ abstract class JsonRpcController
      */
     protected function createServer()
     {
-        return new Server($this->getServerMethodsClass());
+        $transport = new ServerTransport();
+        return new Server($this->getServerMethodsClass(), $transport);
     }
 
     /**
