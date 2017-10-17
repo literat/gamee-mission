@@ -2,24 +2,19 @@
 
 namespace App\Gamee\Repositories;
 
-class GamesRepository
+class GamesRepository extends Repository
 {
 
-  public $error = null;
+    const WITH_SCORES = 'WITHSCORES';
 
-  public function divide($dividend, $divisor, $int = false)
-  {
-
-    if (!$divisor)
+    /**
+     * @param  int $gameId
+     * @param  int $limit
+     * @return array
+     */
+    public function fetchRanking(int $gameId, int $limit = 10): array
     {
-      $this->error = 'Cannot divide by zero';
+        return $this->getConnection()->zRevRange($gameId, 0, $limit - 1, self::WITH_SCORES);
     }
-    else
-    {
-      $quotient = $dividend / $divisor;
-      return $int ? (int) $quotient : $quotient;
-    }
-
-  }
 
 }

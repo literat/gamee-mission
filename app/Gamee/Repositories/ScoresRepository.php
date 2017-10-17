@@ -4,21 +4,8 @@ namespace App\Gamee\Repositories;
 
 use Predis\Client;
 
-class ScoresRepository
+class ScoresRepository extends Repository
 {
-
-    /**
-     * @var Client
-     */
-    private $connection;
-
-    /**
-     * @param Client $connection
-     */
-    public function __construct(Client $connection)
-    {
-        $this->setConnection($connection);
-    }
 
     /**
      * @param  int $gameId
@@ -26,31 +13,9 @@ class ScoresRepository
      * @param  int $score
      * @return bool
      */
-    public function store($gameId, $userId, $score)
+    public function store($gameId, $playerId, $score)
     {
-        $storage = $this->getConnection();
-
-        return $storage->zAdd($gameId, $userId, $score);
-    }
-
-    /**
-     * @return Client
-     */
-    public function getConnection(): Client
-    {
-        return $this->connection;
-    }
-
-    /**
-     * @param Client $connection
-     *
-     * @return self
-     */
-    public function setConnection(Client $connection): self
-    {
-        $this->connection = $connection;
-
-        return $this;
+        return $this->getConnection()->zAdd($gameId, $score, $playerId);
     }
 
 }

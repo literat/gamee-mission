@@ -1,7 +1,9 @@
 services:
     - AltoRouter
     - App\Gamee\Repositories\ScoresRepository
+    - App\Gamee\Repositories\GamesRepository
     - App\Http\Controllers\ScoresController
+    - App\Http\Controllers\GamesController
     - App\Gamee\Application
     - Predis\Client([
         'scheme': 'tcp',
