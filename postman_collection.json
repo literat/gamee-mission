@@ -15,7 +15,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"store\", \"params\": [1, 1, 1], \"id\": 1}"
+					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"store\", \"params\": {\"gameId\": 1, \"playerId\": 1, \"score\": 0}, \"id\": 1}"
 				},
 				"description": ""
 			},
@@ -29,7 +29,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"fetchRanking\", \"params\": [4], \"id\": 1}"
+					"raw": "{\"jsonrpc\": \"2.0\", \"method\": \"fetchRanking\", \"params\": {\"gameId\": 1}, \"id\": 1}"
 				},
 				"description": ""
 			},

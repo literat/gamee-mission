@@ -24,7 +24,18 @@ Bonus points:
 * It would be cool for use to just clone a git repo, write `docker-compose up`
 * It would be even more cool for the players to have the same ranking as other people with the same score :P
 
+## Instalation
+
+Run `composer install` after cloning this project.
+
 ## Development
+
+### API
+
+Read `postman_collection.json` for more information.
+
+* `/scores` - Endpoint for data storing.
+* `/games` - Endpoint for data fetching.
 
 ### Servers
 
