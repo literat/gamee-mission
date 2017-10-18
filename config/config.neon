@@ -1,5 +1,6 @@
 services:
     - AltoRouter
+    - App\Gamee\Ranking\Ranker
     - App\Gamee\Repositories\ScoresRepository
     - App\Gamee\Repositories\GamesRepository
     - App\Http\Controllers\ScoresController
